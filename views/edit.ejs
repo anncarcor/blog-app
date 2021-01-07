@@ -1,0 +1,21 @@
+<%- include("partials/header") -%> 
+
+
+<div class="container main-container">
+
+<h1>Edit post</h1>
+
+<form action="/update" method="post">
+    <div class="form-group">
+            <label>Title</label>
+            <input required value="<%=title %>"class="form-control" type="text" name="editTitle">
+            <label>Post</label>
+            <textarea class="form-control" name="editBody" rows="5" cols="30"><%=content%></textarea>
+    </div>
+    <input name="checkbox" type="checkbox" value="<%= id %>">
+    <button class="btn btn-primary btn-sm" type="submit">Edit</button>
+</form>
+
+</div>
+
+<%- include("partials/footer.ejs") -%> 

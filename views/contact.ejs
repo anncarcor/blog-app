@@ -1,0 +1,22 @@
+<%- include("partials/header") -%> 
+
+<div class="container">
+
+<h1>Contact</h1>
+
+<p> <%= contactContent %>  </p>
+
+
+<div class="contact-form">
+    <form action="/contact" method="post">
+        <input class="form-control form-box" type="text" name="name"class="contact-form-input" placeholder="Enter your name">
+        <input class="form-control form-box" type="email" name="email" id="" class="contact-form-input" placeholder="Enter your e-mail">
+        <input class="form-control form-box" type="text" name="subject"class="contact-form-input" placeholder="Subject">
+        <textarea class="form-control form-box" name="message" id="" class="contact-form-input" cols="30" rows="10"placeholder="Write your message"></textarea>
+        <button class="btn btn-primary contact-btn" type="submit">Send</button>
+    </form>
+    
+</div>
+</div>
+
+<%- include("partials/footer.ejs") -%> 

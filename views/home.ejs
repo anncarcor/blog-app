@@ -1,0 +1,32 @@
+<%- include("partials/header") -%> 
+
+
+<div id="backgroundimg"><img src="/images/background.jpg" alt=""></div>
+
+<div class="intro">
+    <h2>Welcome</h2>
+    <p> <%= startingContent %>  </p>
+</div>
+
+<hr>
+
+<div class="container main-container">
+
+<% posts.forEach(function(post){ %>
+
+    <div class="postTitle">
+        <h3> <%= post.title %> </h3> <p> <em> posted: <%= post.createdAt.toLocaleDateString() %></em> </p>
+    </div>
+   
+    <p ><%= post.content %></p>
+    
+    <a href="posts/<%= post._id %>">Comment</a> ||
+    <a href="posts/<%= post._id %>#disqus_thread"></a>
+
+    
+<% }); %>
+
+<script id="dsq-count-scr" src="//blog-app-5.disqus.com/count.js" async></script>
+
+<%- include("partials/footer.ejs") -%> 
+

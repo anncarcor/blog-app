@@ -1,0 +1,31 @@
+<%- include("partials/header") -%> 
+
+
+<div class="container main-container">
+<h1>Edit list of blog posts</h1>
+
+
+<% posts.forEach(function(post){ %>
+
+    <h3> <%= post.title %> </h3> <p> <em> posted: <%= post.createdAt.toLocaleDateString() %></em> </p>
+   
+    
+    <p> 
+       <%= post.content %>
+        <a href="posts/<%= post._id %>">Read post</a>
+
+    </p> 
+
+    <div class="edit-buttons">
+        <form action="/delete" method="post">
+            <input name="checkbox" type="checkbox" value="<%= post._id %>">
+            <button type="submit" class="btn btn-danger btn-sm" value="<%= post._id %>">Delete</button>
+          </form>
+
+        <a class="btn btn-primary btn-sm" href="edit/<%= post._id %>">Edit</a>
+    </div>
+    </div>
+<% }); %>
+
+
+
